@@ -1,0 +1,8 @@
+{
+  "private": true,
+  "name": "e-menu-website",
+  "workspaces": [
+    "backend",
+    "dashboard"
+  ]
+}
