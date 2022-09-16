@@ -3,6 +3,7 @@
   "name": "e-menu-website",
   "workspaces": [
     "backend",
-    "dashboard"
+    "dashboard",
+    "frontend"
   ]
 }

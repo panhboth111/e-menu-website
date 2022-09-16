@@ -25,6 +25,12 @@ services:
       dockerfile: Dockerfile
     ports:
       - "3001:3001"
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    ports:
+      - "3002:3002"
 
 volumes:
   db_data:
