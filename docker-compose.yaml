@@ -1,4 +1,4 @@
-version: "3.7"
+version: "3.8"
 services:
   db:
     image: postgres:13-alpine
@@ -7,8 +7,8 @@ services:
       - POSTGRES_PASSWORD=postgres
       - POSTGRES_DB=e_menu_db
       - PGPORT=5432
-    # volumes:
-    #   - db_data:/var/lib/postgresql/data
+    volumes:
+      - db_data:/var/lib/postgresql/data
   backend:
     build:
       context: ./backend
@@ -17,8 +17,8 @@ services:
       - "3000:3000"
     depends_on:
       - db
-    # volumes:
-    #   - backend_data:/usr/src/app/uploads
+    volumes:
+      - backend_data:/usr/src/app/uploads
   dashboard:
     build:
       context: ./dashboard
@@ -27,6 +27,6 @@ services:
       - "3001:3001"
     depends_on:
       - backend
-# volumes:
-#   db_data:
-#   backend_data:
+volumes:
+  db_data:
+  backend_data:
