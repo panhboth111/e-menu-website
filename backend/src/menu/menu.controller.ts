@@ -60,8 +60,6 @@ export class MenuController {
 
   //food route
 
-  @UseGuards(JwtAuthGuard, RolesGuard)
-  @Roles(Role.SuperAdmin, Role.Admin)
   @Get('food')
   findAllFood() {
     return this.menuService.findAllFood();
