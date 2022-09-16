@@ -25,8 +25,7 @@ services:
       dockerfile: .
     ports:
       - "3001:3001"
-    depends_on:
-      - backend
+
 volumes:
   db_data:
   backend_data:
