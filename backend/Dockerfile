@@ -7,11 +7,11 @@ WORKDIR /usr/src/app
 
 RUN apt-get update && apt-get install build-essential
 
-COPY package.json yarn.lock ./
+COPY package.json  ./
 
 RUN yarn install
 
-COPY ./ ./
+COPY . .
 
 RUN yarn build
 
