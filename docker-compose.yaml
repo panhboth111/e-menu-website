@@ -19,12 +19,12 @@ services:
       - db
     volumes:
       - backend_data:/usr/src/app/uploads
-  dashboard:
-    build:
-      context: ./dashboard
-      dockerfile: .
-    ports:
-      - "3001:3001"
+  # dashboard:
+  #   build:
+  #     context: ./dashboard
+  #     dockerfile: .
+  #   ports:
+  #     - "3001:3001"
 
 volumes:
   db_data:

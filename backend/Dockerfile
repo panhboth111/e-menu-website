@@ -7,7 +7,7 @@ WORKDIR /usr/src/app
 
 RUN apt-get update && apt-get install build-essential
 
-COPY package.json  ./
+COPY package.json  .
 
 RUN yarn install
 
