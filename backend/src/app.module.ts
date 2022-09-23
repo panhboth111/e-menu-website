@@ -9,6 +9,7 @@ import { FilesModule } from './files/files.module';
 import { ServeStaticModule } from '@nestjs/serve-static';
 import { join } from 'path';
 import { MenuModule } from './menu/menu.module';
+import { OrderModule } from './order/order.module';
 
 @Module({
   imports: [
@@ -21,6 +22,7 @@ import { MenuModule } from './menu/menu.module';
       rootPath: join(__dirname, '..', 'uploads'),
     }),
     MenuModule,
+    OrderModule,
   ],
   controllers: [AppController],
   providers: [AppService],
