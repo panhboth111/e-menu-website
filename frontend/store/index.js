@@ -18,4 +18,10 @@ export const actions = {
   REMOVE_ITEM({ commit }, item) {
     commit("REMOVE_ITEM", item);
   },
+  async nuxtServerInit({ commit }, { req }) {
+    // console.log(localStorage.getItem("items"));
+    if (process.client) {
+      console.log("here");
+    }
+  },
 };

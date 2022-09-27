@@ -1,12 +1,11 @@
 <template>
-  <div>under developmenet</div>
+  <div>under developmenetgtttt</div>
 </template>
 
 <script>
 export default {
-  async asyncData() {
-    // if (process.client && localStorage.getItem("items")) {
-    // }
+  mounted() {
+    console.log(localStorage.getItem("items"));
   },
 };
 </script>
