@@ -18,6 +18,7 @@ import { Roles } from 'src/auth/decorators/roles.decorator';
 import { Role } from 'src/users/enums/role.enum';
 import { JwtAuthGuard } from 'src/auth/passport/guards/jwt-auth.guard';
 import { RolesGuard } from 'src/auth/passport/guards/role-auth.guard';
+import { GetFoodsDto } from './dto/get-foods.dto';
 
 @Controller('menu')
 export class MenuController {
@@ -72,12 +73,19 @@ export class MenuController {
     return this.menuService.findOneFood(id);
   }
 
+
+
   @UseGuards(JwtAuthGuard, RolesGuard)
   @Roles(Role.SuperAdmin, Role.Admin)
   @Post('food')
   createFood(@Body() createFoodDto: CreateFoodDto) {
     console.log('here');
     return this.menuService.createFood(createFoodDto);
+  }
+
+  @Post('food/ids')
+  findManyFood(@Body() getFoodsDto:GetFoodsDto){
+    return this.menuService.findManyFoodByIds(getFoodsDto.ids)
   }
 
   @UseGuards(JwtAuthGuard, RolesGuard)

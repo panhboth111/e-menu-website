@@ -4,7 +4,7 @@
   "port": 5432,
   "username": "postgres",
   "password": "postgres",
-  "database": "e_menu_db",
+  "database": "e-menu-db",
   "entities": ["dist/**/*.entity{.ts,.js}"],
   "synchronize": true,
   "migrations": ["dist/db/migrations/*.js"],

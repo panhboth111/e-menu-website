@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
-import { Repository } from 'typeorm';
+import { In, Repository } from 'typeorm';
 import { CreateCategoryDto } from './dto/create-category.dto';
 import { CreateFoodDto } from './dto/create-food.dto';
 
@@ -136,6 +136,7 @@ export class MenuService {
       };
     }
   }
+
   //retrieve one food
   async findOneFood(id: number) {
     try {
@@ -154,6 +155,15 @@ export class MenuService {
         msg: error.message,
         data: null,
       };
+    }
+  }
+  async findManyFoodByIds(ids:Number[]){
+    
+    try {
+      const foods = await this.foodRepo.find({where:{id:In(ids)}})
+      return foods
+    } catch (error) {
+      return []
     }
   }
   //Create Food
