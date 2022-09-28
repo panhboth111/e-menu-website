@@ -10,6 +10,9 @@ export const mutations = {
     state.items = state.items.filter((i) => i !== item);
     localStorage.setItem("items", JSON.stringify([...state.items]));
   },
+  CLEAR_ITEMS(state,item){
+    state.items = []
+  }
 };
 export const actions = {
   ADD_ITEM({ commit, state }, item) {
@@ -17,6 +20,9 @@ export const actions = {
   },
   REMOVE_ITEM({ commit }, item) {
     commit("REMOVE_ITEM", item);
+  },
+  CLEAR_ITEMS({commit}){
+    commit("CLEAR_ITEMS");
   },
   async nuxtServerInit({ commit }, { req }) {
     // console.log(localStorage.getItem("items"));

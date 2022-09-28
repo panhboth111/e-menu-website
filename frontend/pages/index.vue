@@ -18,14 +18,13 @@ export default {
       const categories = await $axios.$get("/menu/category");
 
       const foods = await $axios.$get("/menu/food");
-      console.log(foods);
+
       return {
         categories: categories.data,
         foods: foods.data,
         currentCategory: null,
       };
     } catch (error) {
-      console.log(error.message);
       return {
         categories: [],
         foods: [],
