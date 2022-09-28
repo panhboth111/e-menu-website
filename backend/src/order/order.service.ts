@@ -52,7 +52,7 @@ export class OrderService {
 
   async findAllOrder() {
     try {
-      const order = await this.orderRepo.find({ relations: ['user', 'food'] });
+      const order = await this.orderRepo.find({ relations: [ 'food'] });
       return {
         statusCode: 201,
         msg: 'Order retrieved successfully',
