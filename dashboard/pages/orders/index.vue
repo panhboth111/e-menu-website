@@ -1,7 +1,7 @@
 <template>
   <div>
     <ReusablesErrorDialog :msg="msg" />
-    <ReusablesDatatable :headers="headers" to="users" />
+    <OrdersTable :headers="headers" to="users" :items="order" />
   </div>
 </template>
 
@@ -9,15 +9,20 @@
 export default {
   data() {
     return {
-      headers: [],
+      headers: [        
+        { text: "Id", value: "id" },
+        { text: "Items", value: "foods" },
+        { text: "Total Price", value: "totalPrice" },
+
+      ],
       msg: "",
     };
   },
   async asyncData({ $axios }) {
     try {
-      const users = await $axios.$get("/users");
+      const order = await $axios.$get("/order");
       return {
-        users: users.data,
+        order: order.data,
       };
     } catch (error) {}
   },
