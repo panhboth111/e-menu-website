@@ -16,7 +16,7 @@
             >CREATE</v-btn
           >
         </v-row>
-        <v-data-table :headers="headers" :items="items">
+        <v-data-table :headers="headers" :items="items" :search="search">
           <template v-slot:item.actions="{ item }">
             <v-btn @click="handleNavigateView(item)" icon
               ><v-icon size="20">mdi-eye</v-icon></v-btn

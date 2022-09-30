@@ -13,7 +13,7 @@
             </v-col>
             <v-spacer></v-spacer>
           </v-row>
-          <v-data-table :headers="headers" :items="items">
+          <v-data-table :headers="headers" :items="items" :search="search">
             <template v-slot:item.foods="{ item }">
                 <span v-for="(food,index) in item.foods" class="  px-2 py-1" >{{food.name}}, </span>
             </template>
